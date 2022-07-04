@@ -1,4 +1,5 @@
 import styles from "../styles/Layouts.module.css";
+import Header from './Header'
 import Nav from "./Nav";
 const Layouts = (props) => {
   return (
@@ -6,7 +7,7 @@ const Layouts = (props) => {
       <Nav />
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1>Hello</h1>
+          <Header/>
           {props.children}
         </main>
       </div>
