@@ -1,11 +1,9 @@
 import Head from "next/head";
-
-export default function Home(props) {
+import ArticleList from "../components/ArticleList";
+export default function Home({articles}) {
   return (
     <div>
-      {props.articles.map((article) => (
-        <h3>{article.title}</h3>
-      ))}
+      <ArticleList articles={articles}/>
     </div>
   );
 }
