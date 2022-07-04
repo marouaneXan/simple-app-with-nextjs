@@ -1,19 +1,22 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function Home(props) {
-  console.log(props.articles)
   return (
     <div>
-      <h1>Hello world</h1>
+      {props.articles.map((article) => (
+        <h3>{article.title}</h3>
+      ))}
     </div>
-  )
+  );
 }
-export const getStaticProps=async() =>{
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-  const articles = await res.json()
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?_limit=6`
+  );
+  const articles = await res.json();
   return {
-    props:{
-      articles
-    }
-  }
-}
+    props: {
+      articles,
+    },
+  };
+};
